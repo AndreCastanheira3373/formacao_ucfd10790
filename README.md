@@ -1,5 +1,5 @@
 # TPC
-![ TPC ](C:\Users\User\Documents\GitHub\formacao_ucfd10790\public\tpc.jpg)
+![ TPC ]([C:\Users\User\Documents\GitHub\formacao_ucfd10790\public\tpc.jpg](https://github.com/AndreCastanheira3373/formacao_ucfd10790/blob/main/public/tpc.jpg))
 ---
 Descrição: Lista de TPCs com disciplina, páginas e duração de execução
 ---
@@ -12,5 +12,5 @@ Funcionalidades: Criar, listar, marcar como 'Concluida' e excluir
 ## Listar
 ## Tag 'Concluida'
 ## Excluir
-[title](https://formacaoucfd10790-git-main-andrecastanheira3373.vercel.app/)
+[ TPC ](https://formacaoucfd10790-git-main-andrecastanheira3373.vercel.app/)
 
