@@ -1,7 +1,7 @@
 # TPC
 ![ TPC ](https://github.com/AndreCastanheira3373/formacao_ucfd10790/blob/main/public/tpc.jpg)
 ---
-Descrição: Lista de **TPC**TPC (TAREFA PARA CASA) com disciplina, páginas e duração de execução.
+Descrição: Lista de TPC (TAREFA PARA CASA) com disciplina, páginas e duração de execução.
 ---
 ## Fazer Anotação (ENTRADA)
 1. Disciplina
