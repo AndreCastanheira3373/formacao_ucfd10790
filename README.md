@@ -1,4 +1,4 @@
-# TPC
+# **TPC**
 ![ TPC ](https://github.com/AndreCastanheira3373/formacao_ucfd10790/blob/main/public/tpc.jpg)
 ---
 Descrição: Lista de TPCs com disciplina, páginas e duração de execução
