@@ -1,5 +1,5 @@
 # Feedback Aplication
-Descrição: NOME DO PROJETO
+Descrição: TPC
 Funcionalidades: Exemplo: criar conta, fazer login
 ## Segundo Título
 
