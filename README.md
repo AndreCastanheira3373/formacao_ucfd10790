@@ -1,7 +1,10 @@
 # TPC
-![ TPC )(C:\Users\User\Documents\GitHub\formacao_ucfd10790\public\tpc.jpg)
+![ TPC ](C:\Users\User\Documents\GitHub\formacao_ucfd10790\public\tpc.jpg)
+---
 Descrição: Lista de TPCs com disciplina, páginas e duração de execução
+---
 Funcionalidades: Criar, listar, marcar como 'Concluida' e excluir
+---
 ## Fazer Anotação (ENTRADA)
 1. Disciplina
 2. Páginas
