@@ -1,7 +1,7 @@
 const Images = () => {
     return (
         <div>
-         <img src="/tpc.jpg" />
+            <img src="/tpc.jpg" />
         </div>
     );
 };
