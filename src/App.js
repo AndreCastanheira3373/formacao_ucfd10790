@@ -1,7 +1,6 @@
 import './App.css';
 import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
-import Images from './components/Images';
 
 const API = "http://localhost:5000";
 
@@ -32,10 +31,10 @@ function App() {
   return (
     <div className="App">
       <div className="tpc-header">
-        <Images />
+      <img src="/tpc.jpg" />
       </div>
       <div className='form-tpc'>
-        <h2>REACT - André Castanheira</h2>
+        <h2>REACT - André Castanheira v3</h2>
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
             <label htmlFor="title"> Insira a disciplina da nova TPC:</label>
