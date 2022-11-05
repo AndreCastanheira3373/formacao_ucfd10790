@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
 //const API = "http://localhost:5000";
-const API = "https://github.com/AndreCastanheira3373/formacao_ucfd10790/blob/main/data/db.json";
+const API = "https://github.com/AndreCastanheira3373/formacao_ucfd10790/blob/main/data/db.json:tpcs";
 
 function App() {
   const [title,setTitle] = useState("");
