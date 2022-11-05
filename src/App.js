@@ -16,7 +16,8 @@ function App() {
   useEffect(() => {
     const loadData = async() => {
       setLoading(true);
-      const res = await fetch(API + "/tpcs",)
+      //const res = await fetch(API + "/tpcs",)
+      const res = await fetch(API)
       .then((res) => res.json())
       .then((data) => data)
       .catch((err) => console.log(err));
