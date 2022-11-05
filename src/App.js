@@ -2,7 +2,8 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
-const API = "http://localhost:5000";
+//const API = "http://localhost:5000";
+const API = "https://api.github.com/repos/AndreCastanheira3373/formacao_ucfd10790/git/trees/435d343ff612e6d61d5a524aba9a958434f14bc5";
 
 function App() {
   const [title,setTitle] = useState("");
@@ -16,6 +17,7 @@ function App() {
     const loadData = async() => {
       setLoading(true);
       const res = await fetch(API + "/tpcs",)
+      //const res = await fetch(API)
       .then((res) => res.json())
       .then((data) => data)
       .catch((err) => console.log(err));
@@ -37,6 +39,7 @@ function App() {
     };
     
     await fetch(API+"/tpcs", {
+    //await fetch(API, {
       method: "POST",
       body: JSON.stringify(tpc),
       headers: {
@@ -53,6 +56,7 @@ function App() {
 
   const handleDelete = async (id) => {
     await fetch(API+"/tpcs/"+ id, {
+    //await fetch(API+ id, {
       method: "DELETE",
     });
     setTpcs((prevState) => prevState.filter((tpc) => tpc.id !== id));
@@ -61,6 +65,7 @@ function App() {
   const handleEdit = async(tpc) => {
     tpc.done = !tpc.done;
     const data = await fetch(API+"/tpcs/"+ tpc.id, {
+    //const data = await fetch(API+ tpc.id, {
       method: "PUT",
       body: JSON.stringify(tpc),
       headers: {
