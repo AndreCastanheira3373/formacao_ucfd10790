@@ -2,8 +2,8 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
-//const API = "http://localhost:5000";
-const API = "https://api.github.com/repos/AndreCastanheira3373/formacao_ucfd10790/git/trees/435d343ff612e6d61d5a524aba9a958434f14bc5";
+const API = "http://localhost:5000";
+//const API = "https://api.github.com/repos/AndreCastanheira3373/formacao_ucfd10790/git/trees/435d343ff612e6d61d5a524aba9a958434f14bc5";
 
 function App() {
   const [title,setTitle] = useState("");
@@ -82,6 +82,7 @@ function App() {
   }
 
   return (
+    <>
     <div className="App">
       <div className="tpc-header">
       <img src="tpc.jpg" />
@@ -142,6 +143,7 @@ function App() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
