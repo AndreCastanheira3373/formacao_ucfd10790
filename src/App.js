@@ -2,8 +2,7 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
-//const API = "http://localhost:5000";
-const API = "https://formacaoucfd10790-git-main-andrecastanheira3373.vercel.app";
+const API = "http://localhost:5000";
 
 function App() {
   const [title,setTitle] = useState("");
