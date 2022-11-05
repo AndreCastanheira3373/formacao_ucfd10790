@@ -8,10 +8,24 @@ function App() {
   const [title,setTitle] = useState("");
   const [page,setPage] = useState("");
   const [time,setTime] = useState("");
-  const [tpc, setTpc] = useState([]);
+  const [tpcs, setTpcs] = useState([]);
   const [loading, setLoading] =useState(false);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const loadData = async() => {
+      setLoading(true);
+      const res = await fetch(API + "/tpcs")
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((err) => console.log(err));
+
+    setLoading(false);
+    setTpcs(res);
+    };
+    loadData();
+  },[]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const tpc = {
       id: Math.random(),
@@ -19,25 +33,58 @@ function App() {
       page,
       time,
       done: false,
-    }
-    console.log(tpc);
+    };
+    
+    await fetch(API+"/tpcs", {
+      method: "POST",
+      body: JSON.stringify(tpc),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    setTpcs((prevState) => [...prevState,tpc]);
 
     setTitle("");
     setPage("");
     setTime("");
   };
 
+  const handleDelete = async (id) => {
+    await fetch(API+"/tpcs/"+ id, {
+      method: "DELETE",
+    });
+    setTpcs((prevState) => prevState.filter((tpc) => tpc.id !== id));
+  };
+
+  const handleEdit = async(tpc) => {
+    tpc.done = !tpc.done;
+    const data = await fetch(API+"/tpcs/"+ tpc.id, {
+      method: "PUT",
+      body: JSON.stringify(tpc),
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+    setTpcs((prevState) => 
+    prevState.map((t) => (t.id === data.id ? (t=data) : t))
+    );
+  }
+
+  if(loading) {
+    return <p>Carregando...</p>;
+  }
 
   return (
     <div className="App">
       <div className="tpc-header">
-      <img src="/tpc.jpg" />
+      <img src="tpc.jpg" />
       </div>
       <div className='form-tpc'>
-        <h2>REACT - André Castanheira v3</h2>
+        <h2>REACT - André Castanheira v4</h2>
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
-            <label htmlFor="title"> Insira a disciplina da nova TPC:</label>
+            <label htmlFor="title">Disciplina:</label>
             <input 
             type="text" 
             name="tilte" 
@@ -48,7 +95,7 @@ function App() {
             />
           </div>
           <div className='form-control'>
-            <label htmlFor="page"> Insira as páginas:</label>
+            <label htmlFor="page">Páginas:</label>
             <input 
             type="text" 
             name="page" 
@@ -59,7 +106,7 @@ function App() {
             />
           </div>
           <div className='form-control'>
-            <label htmlFor="time"> Duração de execução:</label>
+            <label htmlFor="time"> Duração:</label>
             <input 
             type="text" 
             name="time" 
@@ -74,9 +121,20 @@ function App() {
       </div>
       <div className='list-tpc'>
         <h2>Lista de TPCs:</h2>
-        {tpc.length === 0 && <p>Não há TPCs armazenados!</p>}
+        {tpcs.length === 0 && <p>Não há TPCs armazenados!</p>}
+        {tpcs.map((tpc) => (
+          <div className="tpc" key={tpc.id}>
+            <h3 className={tpc.done ?"tpc-done" : ""}>{tpc.title}</h3>
+            <p>Páginas: {tpc.page} - Duração: {tpc.time} minutos</p>
+            <div className="actions">
+              <span onClick={() => handleEdit(tpc)}>
+                {!tpc.done ? <BsBookmarkCheck/> : <BsBookmarkCheckFill/>}
+              </span>
+              <BsTrash onClick={() => handleDelete(tpc.id)} />
+            </div>
+          </div>
+        ))}
       </div>
- 
     </div>
   );
 }
