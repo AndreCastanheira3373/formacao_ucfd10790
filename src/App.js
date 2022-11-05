@@ -2,7 +2,8 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
-const API = "http://localhost:5000";
+//const API = "http://localhost:5000";
+const API = "https://github.com/AndreCastanheira3373/formacao_ucfd10790/blob/main/data/db.json:5000";
 
 function App() {
   const [title,setTitle] = useState("");
@@ -11,10 +12,11 @@ function App() {
   const [tpcs, setTpcs] = useState([]);
   const [loading, setLoading] =useState(false);
 
+
   useEffect(() => {
     const loadData = async() => {
       setLoading(true);
-      const res = await fetch(API + "/tpcs")
+      const res = await fetch(API + "/tpcs",)
       .then((res) => res.json())
       .then((data) => data)
       .catch((err) => console.log(err));
