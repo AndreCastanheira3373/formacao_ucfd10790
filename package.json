@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "proxy": "http://http://localhost:5000/tpcs",
+    "proxy": "http://localhost:5000/tpcs",
     "server": "json-server --watch data/db.json --port 5000"
   },
   "eslintConfig": {
