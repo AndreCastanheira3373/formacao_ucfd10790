@@ -2,6 +2,7 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
+
 const API = "http://localhost:5000";
 //const API = "https://raw.githubusercontent.com/AndreCastanheira3373/formacao_ucfd10790/main/data/db.json";
 
