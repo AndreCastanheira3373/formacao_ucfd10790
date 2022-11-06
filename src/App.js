@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
 const API = "http://localhost:5000";
-//const API = "https://api.github.com/repos/AndreCastanheira3373/formacao_ucfd10790/git/trees/435d343ff612e6d61d5a524aba9a958434f14bc5";
+//const API = "https://raw.githubusercontent.com/AndreCastanheira3373/formacao_ucfd10790/main/data/db.json";
 
 function App() {
   const [title,setTitle] = useState("");
@@ -11,7 +11,6 @@ function App() {
   const [time,setTime] = useState("");
   const [tpcs, setTpcs] = useState([]);
   const [loading, setLoading] =useState(false);
-
 
   useEffect(() => {
     const loadData = async() => {
@@ -85,7 +84,7 @@ function App() {
     <>
     <div className="App">
       <div className="tpc-header">
-      <img src="tpc.jpg" />
+      <img src="tpc.jpg" alt="TPC"/>
       </div>
       <div className='form-tpc'>
         <h2>REACT - André Castanheira v4</h2>
