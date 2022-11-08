@@ -1,10 +1,16 @@
 import './App.css';
 import {useState, useEffect} from 'react';
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
+import axios from "axios";
 
 
-const API = "http://localhost:5000";
+const API = "https://api.github.com/repos/AndreCastanheira3373/formacao_ucfd10790/git/blobs/6d4fd0a37fb3feaf9e5eba9fb5be659e33d2b11f";
+//const API = "http://localhost:5000";
 //const API = "https://raw.githubusercontent.com/AndreCastanheira3373/formacao_ucfd10790/main/data/db.json";
+const api =axios.create({
+  baseURL: "https://api.github.com/users/AndreCastanheira3373",
+});
+
 
 function App() {
   const [title,setTitle] = useState("");
